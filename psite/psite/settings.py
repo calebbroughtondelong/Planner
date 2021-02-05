@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'papp',
+
 ]
 
 MIDDLEWARE = [
@@ -74,6 +75,7 @@ WSGI_APPLICATION = 'psite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -85,16 +87,13 @@ DATABASES = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'calebd_planner',
-        'USER': 'calebd_owner',
-        'PASSWORD': 'm$o&3k6[Oc{p',
-        'HOST':'johnny.heliohost.org',
+        'NAME': 'ZRnLcgYsmg',
+        'USER': 'ZRnLcgYsmg',
+        'PASSWORD': 'YM79ARJI8B',
+        'HOST':'remotemysql.com',
         'PORT': '3306',
     }
 }
-'''
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -133,3 +132,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+LOGOUT_REDIRECT_URL = 'accounts/login'

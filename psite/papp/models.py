@@ -7,6 +7,7 @@ class Tasks(models.Model):
     text = models.CharField(max_length=100)
     due = models.DateTimeField(default = timezone.now)
     id = models.IntegerField(primary_key=True)
+    userid = models.CharField(max_length=100)
 
     def __str__(self):
         return "Task Object"

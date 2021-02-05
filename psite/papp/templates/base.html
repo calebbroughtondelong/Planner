@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Peralta" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{%  static 'style.css' %}">
+    <title class = home_title>Caleb's Planner Home</title>
+</head>
+
+<body>
+    <div class = pg_holder>
+        <div class = nav_bar>
+            {%block navigation%}
+            {%endblock%}
+        </div>
+        <div class = top_bar>
+            <img src="{%static 'images/login.png' %}" class = login_button onclick="open_login_menu()">
+            <div class = dropdown_menu>
+                {%block login_status%}
+                {%endblock%}
+                <a href=""> Log In </a>
+                <a href=""> Sign Up </a>
+            </div>
+        </div>
+            <div class = content_holder>
+                <div class = middle_bar>
+                    <div class = tasks>
+                        {%block task_list%}
+                        {%endblock%}
+                    </div>
+
+                {%block content%}
+                {%endblock%}
+                </div>
+            </div>
+
+
+    </div>
+
+</body>
+
+<footer> Created by Caleb Broughton-DeLong</footer>
+</html>
+

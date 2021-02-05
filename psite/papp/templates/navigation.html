@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% block navigation %}
+
+<p> {{url_list|length}}</p>
+<ul>
+{% for urli in url_list %}
+    <li>{{urli}}</li>
+
+{% endfor %}
+</ul>
+
+
+{% endblock %}
+</html>
