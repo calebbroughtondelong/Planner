@@ -11,13 +11,12 @@
   <form method="post" action="{% url 'tasks' %}">
     {% csrf_token %}
     <table>
+      {% for field in form %}
       <tr>
-        <td>{{form.name}}</td>
-        <td>{% form.name %} </td>
+        <td> {{ field.name }} </td>
+        <td> {{ field }} </td>
       </tr>
-      <tr>
-        <td>{{ form.text }}</td>
-      </tr>
+      {% endfor %}
     </table>
     <input type="submit" value="Create Task" />
     <input type="hidden" name="next" value="{{ next }}" />

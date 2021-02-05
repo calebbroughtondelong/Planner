@@ -13,4 +13,4 @@ class CustomLoginForm(UserCreationForm):
 class TaskForm(ModelForm):
     class Meta:
         model = Tasks
-        fields = ['name','text','due','id','userid']
+        exclude = ['id','userid']

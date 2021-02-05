@@ -6,7 +6,7 @@ from .forms import TaskForm
 from django.shortcuts import render, redirect
 
 def home(request):
-    template = loader.get_template('index.html')
+    template = loader.get_template('base.html')
     context = {
     }
     return HttpResponse(template.render(context))
@@ -27,7 +27,7 @@ def tasks(request):
         context = {
             'form':TaskForm
         }
-        return HttpResponse(template.render(context))
+        return render(request,'tasks.html',context)
 
 
 def matrix(request):
@@ -35,3 +35,6 @@ def matrix(request):
     template = loader.get_template('polls/index2.html')
     context = {'tasks': tasks_list}
     return HttpResponse(template.render(context))
+
+def generate_task_id():
+    pass
