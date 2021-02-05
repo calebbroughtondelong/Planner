@@ -11,10 +11,14 @@ def home(request):
     }
     return HttpResponse(template.render(context))
 
+def test(request):
+    context = {}
+    return render(request, 'include.html',context)
 
 def tasks(request):
     if request.method == 'POST':
         form = TaskForm(request.POST)
+        form.id = 1
         if form.is_valid():
             form.save()
             return redirect('home')

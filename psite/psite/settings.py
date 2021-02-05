@@ -134,3 +134,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 LOGOUT_REDIRECT_URL = 'accounts/login'
+
+TEMPLATE_DEBUG = True

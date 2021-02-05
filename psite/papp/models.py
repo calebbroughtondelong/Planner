@@ -3,10 +3,10 @@ from django.utils import timezone,dateformat
 
 
 class Tasks(models.Model):
-    name = models.CharField(max_length=100)
-    text = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, default='Test')
+    text = models.CharField(max_length=100, default = 'Test')
     due = models.DateTimeField(default = timezone.now)
-    id = models.IntegerField(primary_key=True)
+    id = models.IntegerField(primary_key=True, default = 1)
     userid = models.CharField(max_length=100)
 
     def __str__(self):

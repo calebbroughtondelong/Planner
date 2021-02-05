@@ -10,10 +10,10 @@
 </head>
 
 <body>
+<h1> Homepage </h1>
     <div class = pg_holder>
         <div class = nav_bar>
-            {%block navigation%}
-            {%endblock%}
+            {%include 'navigation.html' %}
         </div>
         <div class = top_bar>
             <img src="{%static 'images/login.png' %}" class = login_button onclick="open_login_menu()">
@@ -35,6 +35,11 @@
                 {%endblock%}
                 </div>
             </div>
+        <div>
+
+        <h3> Test H3</h3>
+
+        </div>
 
 
     </div>
