@@ -6,16 +6,17 @@
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=Peralta" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{%  static 'style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{%  static 'nav.css' %}">
     <title class = home_title>Caleb's Planner Home</title>
 </head>
 
 <body>
-<h1> Homepage </h1>
-    <div class = pg_holder>
+    <div class = pg_holder >
         <div class = nav_bar>
             {%include 'navigation.html' %}
         </div>
         <div class = top_bar>
+            <h3> This verifies CSS is working </h3>
             <img src="{%static 'images/login.png' %}" class = login_button onclick="open_login_menu()">
             <div class = dropdown_menu>
                 {%block login_status%}
@@ -37,7 +38,6 @@
             </div>
         <div>
 
-        <h3> Test H3</h3>
 
         </div>
 
@@ -46,6 +46,5 @@
 
 </body>
 
-<footer> Created by Caleb Broughton-DeLong</footer>
 </html>
 

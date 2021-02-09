@@ -36,7 +36,7 @@ def tasks(request):
 
 def matrix(request):
     tasks_list = Tasks.objects.order_by('due')[:5]
-    template = loader.get_template('polls/index2.html')
+    template = loader.get_template('matrix.html')
     context = {'tasks': tasks_list}
     return HttpResponse(template.render(context))
 

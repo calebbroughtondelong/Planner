@@ -8,6 +8,7 @@ urlpatterns = [
     path('matrix/',views.matrix,name='matrix'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('test/',views.test,name='test'),
+    path('matrix/',views.matrix,name='matrix'),
 ]
 
 '''

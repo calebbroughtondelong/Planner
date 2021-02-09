@@ -1,0 +1,59 @@
+/* Fonts */
+
+
+/* div {outline-style: solid; outline-color:green;} */
+
+.nav_holder {
+width:100px;
+position:relative;
+height: 500px;
+display:flex;
+flex-direction: column;
+}
+
+.nav_row{
+display:flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+}
+
+.nav_item{
+width: 50%
+flex: 0 0 120px;
+}
+.pt{
+vertical-align:center
+}
+
+.nav_img{
+width:50px;
+}
+
+h3 {
+color:red;
+}
+
+/*
+.nav_item {
+position:relative;
+width:49%;
+text-align: center;
+height: 50px;
+background:yellow;
+display:flex;
+}
+.nav_img{
+width:50px;
+background:blue;
+}
+.right{
+ transform: translate(100%,-100%);
+ background:red;
+
+}
+.right p{
+transform:translate(0%,50%);
+}
+*/
+

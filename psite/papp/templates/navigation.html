@@ -1,18 +1,51 @@
-<list>
-    <li>
-        <a href="{% url 'home' %}"> Home </a>
-    </li>
-    <li>
-        <a href="{% url 'test' %}"> Test </a>
-    </li>
-    <li>
-        <a href="{% url 'tasks' %}"> Tasks </a>
-    </li>
-    <li>
-        <a href = "admin"> Admin </a>
-    </li>
+{% load static %}
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Peralta" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{%  static 'nav.css' %}">
+</head>
+
+    <div class = nav_holder>
+        <!-- Home -->
+        <div class = nav_row>
+            <div class = nav_item>
+                <a href="{% url 'home' %}"> <img src="{%static 'images/home.png'%}" class = nav_img></a>
+            </div>
+            <div class = nav_item>
+            <p class>Home</p>
+            </div>
+        </div>
+        <!-- Tasks -->
+        <div class = nav_row>
+            <div class = nav_item>
+                <a href="{% url 'tasks' %}"> <img src="{%static 'images/check.png'%}" class = nav_img></a>
+            </div>
+            <div class = nav_item>
+            <p class>Tasks</p>
+            </div>
+        </div>
+
+        <!-- Matrix -->
+        <div class = nav_row>
+            <div class = nav_item>
+                <a href="{% url 'matrix' %}"> <img src="{%static 'images/matrix.png'%}" class = nav_img></a>
+            </div>
+            <div class = nav_item>
+            <p class>Matrix</p>
+            </div>
+        </div>
+
+        <!-- Test -->
+        <div class = nav_row>
+            <div class = nav_item>
+                <a href="{% url 'test' %}"> <img src="{%static 'images/login.png'%}" class = nav_img></a>
+            </div>
+            <div class = nav_item>
+            <p class>Test</p>
+            </div>
+        </div>
+    </div>
 
 
-</list>
 
 
