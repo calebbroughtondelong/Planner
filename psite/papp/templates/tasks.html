@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
+{% block content%}
 <p> Test </p>
 
   <form method="post" action="{% url 'tasks' %}">
@@ -22,6 +17,4 @@
     <input type="hidden" name="next" value="{{ next }}" />
   </form>
 
-
-</body>
-</html>
+{% endblock %}

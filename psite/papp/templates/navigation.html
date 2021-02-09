@@ -7,43 +7,50 @@
 
     <div class = nav_holder>
         <!-- Home -->
-        <div class = nav_row>
-            <div class = nav_item>
-                <a href="{% url 'home' %}"> <img src="{%static 'images/home.png'%}" class = nav_img></a>
+        <a href="{% url 'home' %}">
+            <div class = nav_row>
+                <div class = nav_item>
+                    <img src="{%static 'images/home.png'%}" class = nav_img>
+                </div>
+                <div class = nav_item>
+                    <p class>Home</p>
+                </div>
             </div>
-            <div class = nav_item>
-            <p class>Home</p>
-            </div>
-        </div>
+        </a>
         <!-- Tasks -->
-        <div class = nav_row>
-            <div class = nav_item>
-                <a href="{% url 'tasks' %}"> <img src="{%static 'images/check.png'%}" class = nav_img></a>
+        <a href="{% url 'tasks' %}">
+            <div class = nav_row>
+                <div class = nav_item>
+                    <img src="{%static 'images/tasks.png'%}" class = nav_img>
+                </div>
+                <div class = nav_item>
+                    <p class>Home</p>
+                </div>
             </div>
-            <div class = nav_item>
-            <p class>Tasks</p>
-            </div>
-        </div>
-
+        </a>
         <!-- Matrix -->
-        <div class = nav_row>
-            <div class = nav_item>
-                <a href="{% url 'matrix' %}"> <img src="{%static 'images/matrix.png'%}" class = nav_img></a>
+        <a href="{% url 'matrix' %}">
+            <div class = nav_row>
+                <div class = nav_item>
+                    <img src="{%static 'images/matrix.png'%}" class = nav_img>
+                </div>
+                <div class = nav_item>
+                    <p class>Home</p>
+                </div>
             </div>
-            <div class = nav_item>
-            <p class>Matrix</p>
-            </div>
-        </div>
+        </a>
 
         <!-- Test -->
-        <div class = nav_row>
-            <div class = nav_item>
-                <a href="{% url 'test' %}"> <img src="{%static 'images/login.png'%}" class = nav_img></a>
+        <a href="{% url 'test' %}">
+            <div class = nav_row>
+                <div class = nav_item>
+                    <img src="{%static 'images/login.png'%}" class = nav_img>
+                </div>
+                <div class = nav_item>
+                    <p class>Home</p>
+                </div>
             </div>
-            <div class = nav_item>
-            <p class>Test</p>
-            </div>
-        </div>
+        </a>
     </div>
 
 

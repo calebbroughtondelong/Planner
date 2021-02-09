@@ -1,10 +1,8 @@
-/* Fonts */
-
 
 /* div {outline-style: solid; outline-color:green;} */
 
 .nav_holder {
-width:100px;
+width:150px;
 position:relative;
 height: 500px;
 display:flex;
@@ -19,11 +17,11 @@ align-items: center;
 }
 
 .nav_item{
-width: 50%
-flex: 0 0 120px;
+flex: 0 0 60px;
 }
-.pt{
-vertical-align:center
+
+.nav_item p{
+font-size: 20px;
 }
 
 .nav_img{
