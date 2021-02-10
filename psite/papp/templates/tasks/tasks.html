@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static%}
+
+{% block content%}
+<link rel="stylesheet" type="text/css" href="{%  static 'css/tasks.css' %}">
+<script src="{% static '/javascript/javascript.js' %}"></script>
+
+<div>
+  <div onclick="change_visibility('new_task')">
+    Change vis
+  </div>
+  <div id = new_task>
+     {% include 'tasks/new_task.html' %}
+  </div>
+
+
+  <div id = task_list>
+      <p> Task list goes here</p>
+    {% for task in task_list %}
+    {{ task.name }}
+    {% endfor %}
+  </div>
+
+
+
+</div>
+
+
+
+
+{% endblock %}
+

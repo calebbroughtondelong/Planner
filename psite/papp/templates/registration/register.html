@@ -1,10 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link href="https://fonts.googleapis.com/css?family=Peralta" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{%  static 'css/register.css' %}">
+    <title class = home_title>Caleb's Planner Home</title>
 </head>
-<body>
 
-</body>
+<div class = container>
+    <div class = main_div>
+        <form method="post">
+        {% csrf_token %}
+
+        {{form}}
+            <input type="submit" value="Register">
+        </form>
+
+
+
+    </div>
+    <div>
+         <a href="{% url 'register' %}" class="button">Link Button</a>
+    </div>
+</div>
+
 </html>

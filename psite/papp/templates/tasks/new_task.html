@@ -1,7 +1,5 @@
-{% extends 'base.html' %}
 
-{% block content%}
-<p> Test </p>
+<p> Submit your task </p>
 
   <form method="post" action="{% url 'tasks' %}">
     {% csrf_token %}
@@ -13,8 +11,8 @@
       </tr>
       {% endfor %}
     </table>
+
+    <p> {{status}} </p>
     <input type="submit" value="Create Task" />
     <input type="hidden" name="next" value="{{ next }}" />
   </form>
-
-{% endblock %}

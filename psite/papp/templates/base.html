@@ -5,8 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=Peralta" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{%  static 'style.css' %}">
-    <link rel="stylesheet" type="text/css" href="{%  static 'nav.css' %}">
+    <link rel="stylesheet" type="text/css" href="{%  static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{%  static 'css/nav.css' %}">
     <title class = home_title>Caleb's Planner Home</title>
 </head>
 
@@ -25,12 +25,10 @@
                 <a href=""> Sign Up </a>
             </div>
         </div>
-            <div class = content_holder>
-                <div class = middle_bar>
-                    <div class = content>
+            <div class = container>
+                <div class = content_div>
                         {%block content%}
                         {%endblock%}
-                    </div>
                 </div>
             </div>
         <div>

@@ -1,0 +1,72 @@
+:root {
+  --welcome_size:150px;
+  --wts_size:40px;
+}
+
+
+
+
+*{
+margin:0;
+padding:0;
+}
+
+
+div {outline-style: solid; outline-color:green;}
+
+
+html{
+  background: url('../images/register-background.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+ }
+
+img{
+width:50px;
+}
+
+div{
+    text-align:center;
+}
+
+.container{
+display:flex;
+flex-direction: column;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.main_div{
+display:flex;
+width: 500px;
+height:50%;
+background:white;
+}
+
+.welcome_text{
+color:white;
+font-size:var(--welcome_size);
+
+}
+.wts{
+display:inline;
+align-items:center;
+font-size:var(--wts_size);
+color:white;
+padding:10px;
+}
+
+.button {
+  background-color: #5CDB95;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+}
