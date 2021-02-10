@@ -53,6 +53,7 @@ font-size:var(--welcome_size);
 
 
 .button {
+/* button class for first page*/
   background-color: #5CDB95;
   border: none;
   color: white;
