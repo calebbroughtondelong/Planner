@@ -1,0 +1,20 @@
+<div id = new_task>
+<p> Submit your task </p>
+
+  <form method="post" action="{% url 'projects' %}">
+    {% csrf_token %}
+    <table>
+      {% for field in form %}
+      <tr>
+        <td> {{ field.name }} </td>
+        <td> {{ field }} </td>
+      </tr>
+      {% endfor %}
+    </table>
+
+    <p> {{status}} </p>
+    <input type="submit" value="Create Project" />
+    <input type="hidden" name="next" value="{{ next }}" />
+  </form>
+
+</div>

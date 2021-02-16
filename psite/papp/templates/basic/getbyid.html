@@ -1,0 +1,28 @@
+
+
+<p> Test by id top</p>
+<form action="{% url 'tasks' %}" method = "post" id = id_project>
+{% for item in project_list %}
+"{{ item.id }}">{{ item.name }}
+{% endfor %}
+</form>
+<p> Test getbyid.html </p>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script>
+    $("#id_project").change(function () {
+      var url = $("#ProjectForm").attr("project_id_url");  // get the url of the `load_cities` view
+      var projID = $(this).val();  // get the selected country ID from the HTML input
+
+      $.ajax({                       // initialize an AJAX request
+        url: url,                    // set the url of the request (= localhost:8000/hr/ajax/load-cities/)
+        data: {
+          'item': projID     // add the country id to the GET parameters
+        },
+        success: function (data) {   // `data` is the return of the `load_cities` view function
+          $("#id_project").html(data);  // replace the contents of the city input with the data that came from the server
+        }
+      });
+
+    });
+  </script>

@@ -1,0 +1,7 @@
+ {% for pro in project_list %}
+            <td> {{pro.name}}</td>
+            <td> Success</td>
+  {% endfor %}
+
+
+ Loop
