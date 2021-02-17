@@ -136,7 +136,7 @@ STATIC_URL = '/static/'
 
 LOGOUT_REDIRECT_URL = 'accounts/login'
 
-TEMPLATE_DEBUG = True
+DEBUG = TEMPLATE_DEBUG = True
 
 CRISPY_TEMPLATE_PACK = 'uni_form'
 

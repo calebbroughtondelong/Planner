@@ -7,7 +7,9 @@ import uuid
 from django.shortcuts import render, redirect,reverse
 from django.utils.safestring import mark_safe
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Submit
+from crispy_forms.layout import Layout, Fieldset, ButtonHolder, Submit
+from crispy_forms.bootstrap import FormActions,FieldWithButtons,StrictButton
+
 
 class CustomUserCreationForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
@@ -29,7 +31,7 @@ class TaskForm(ModelForm):
         self.helper.form_method = 'post'
         self.helper.form_show_errors = True
 
-        self.helper.add_input(Submit('submit', 'Submit'))
+
 
         self.fields['project'].choices = ([(" ", " ")] + [(p.name,p.name) for p in Projects.objects.all()])
         priority_choices = ([("JDI","JDI"),("UI", "UI"), ("U", "U"), ("I", "I"), ("D", "D")])
