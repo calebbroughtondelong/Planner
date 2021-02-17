@@ -10,7 +10,8 @@ class Projects(models.Model):
     name = models.CharField(max_length=100, default='Test', unique=True)
     description = models.CharField(max_length=1000, default='Test')
     project_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    priority = models.CharField(max_length=20,default = 'Delete')
+    priority_choices = ([("JDI", "JDI"), ("UI", "UI"), ("U", "U"), ("I", "I"), ("D", "D")])
+    priority = models.CharField(max_length=100, choices=priority_choices)
 
     def __str__(self):
         return "Project Object"
@@ -30,7 +31,7 @@ class Tasks(models.Model):
     due = models.DateTimeField(default = timezone.now)
     critical_path = models.BooleanField(default='False')
     time_required = models.DurationField(default=timedelta(hours=1))
-  #  user = models.ForeignKey(User, on_delete=models.CASCADE,default=1)
+    user = models.CharField(max_length=50)
 
     def __str__(self):
         return "Task Object"

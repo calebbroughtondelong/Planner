@@ -18,20 +18,23 @@ def home(request):
 def test(request):
  #   pass
     Tasks.objects.all().delete()
+    Projects.objects.all().delete()
     return redirect(reverse('home'))
 
+@login_required
 def tasks(request):
     task_list = Tasks.objects.order_by('name')[:5]
     project_list = Projects.objects.order_by('name')
     form = TaskForm()
     if request.method == 'POST':
-        form = TaskForm(request.POST)
+        form = TaskForm(request.POST, user = request.user)
 
         project_selected = request.POST.get('project')
         if Projects.objects.filter(name=project_selected):
             associated_project = Projects.objects.filter(name=project_selected)[0]
             form.instance.project_id = str(associated_project.project_id)
             form.instance.project = associated_project.name
+
 
         if form.is_valid():
             form.save()
@@ -47,9 +50,7 @@ def tasks(request):
             }
 
             return render(request, 'tasks/tasks.html', context)
-      # return render(request,'tasks/tasks.html', {'form':form,'status':status})
     elif request.method == 'GET':
-
         context = {
             'form': form,
             'task_list':task_list,
@@ -69,7 +70,6 @@ def projects(request):
                 'form': form,
                 'project_list': project_list,
             }
-
             return render(request,'tasks/projects.html', )
         else:
             form = ProjectForm()
@@ -89,7 +89,6 @@ def matrix(request):
     template = loader.get_template('matrix.html')
     context = {'tasks': tasks_list}
     return HttpResponse(template.render(context))
-
 
 def welcome(request):
     if request.user.is_authenticated:

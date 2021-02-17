@@ -21,6 +21,7 @@ class CustomLoginForm(UserCreationForm):
 class TaskForm(ModelForm):
 
     def __init__(self,*args,**kwargs):
+        self.user = str(kwargs.pop('user',None))
         super(TaskForm,self).__init__(*args,**kwargs)
         self.helper = FormHelper()
         self.helper.form_id = 'id-exampleForm'
@@ -34,9 +35,10 @@ class TaskForm(ModelForm):
         priority_choices = ([("JDI","JDI"),("UI", "UI"), ("U", "U"), ("I", "I"), ("D", "D")])
         self.fields['priority'] = forms.ChoiceField(choices = priority_choices)
 
+
     class Meta:
         model = Tasks
-        exclude = ['id','userid','project_id']
+        exclude = ['id','user','project_id']
 
 class ProjectForm(ModelForm):
 
