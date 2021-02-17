@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'papp',
+    'crispy_forms',
 
 ]
 
@@ -136,3 +137,7 @@ STATIC_URL = '/static/'
 LOGOUT_REDIRECT_URL = 'accounts/login'
 
 TEMPLATE_DEBUG = True
+
+CRISPY_TEMPLATE_PACK = 'uni_form'
+
+#CRISPY_FAIL_SILENTLY = not DEBUG

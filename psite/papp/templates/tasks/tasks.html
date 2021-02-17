@@ -7,18 +7,21 @@
 
 
 <div>
-  <div onclick="change_visibility('new_task')">
+    <div onclick="change_visibility('new_task')">
     Change vis
-  </div>
-     {% include 'tasks/new_task.html' %}
+    </div>
+    <div id = nav_row>
+        {% include 'tasks/new_task.html' %}
+    </div>
 
-  <div id = task_list>
+
+  <div>
       <p> Task list goes here</p>
     {% for task in task_list %}
       <li>
           {{ task.name }}
           {{ task.project}}
-          {{ task.user }}
+          {{ task.project_id }}
       </li>
 
     {% endfor %}

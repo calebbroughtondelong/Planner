@@ -16,55 +16,68 @@ def home(request):
     return HttpResponse(template.render(context))
 
 def test(request):
-    pass
-  #  Tasks.objects.all().delete()
+ #   pass
+    Tasks.objects.all().delete()
+    return redirect(reverse('home'))
 
 def tasks(request):
     task_list = Tasks.objects.order_by('name')[:5]
     project_list = Projects.objects.order_by('name')
-
+    form = TaskForm()
     if request.method == 'POST':
         form = TaskForm(request.POST)
+
+        project_selected = request.POST.get('project')
+        if Projects.objects.filter(name=project_selected):
+            associated_project = Projects.objects.filter(name=project_selected)[0]
+            form.instance.project_id = str(associated_project.project_id)
+            form.instance.project = associated_project.name
+
         if form.is_valid():
             form.save()
             status = "Success"
             form = TaskForm()
-            return render(request,'tasks/tasks.html', {'form':form,'status':status})
+            return render(request,'tasks/tasks.html', {'form':form,'status':status,'task_list':task_list})
         else:
             context = {
                 'form': form,
                 'task_list': task_list,
                 'project_list': project_list,
-                'errors':form.errors,
+                'status':"Did not work"
             }
+
             return render(request, 'tasks/tasks.html', context)
       # return render(request,'tasks/tasks.html', {'form':form,'status':status})
     elif request.method == 'GET':
-        form = TaskForm
+
         context = {
-            'form':form,
+            'form': form,
             'task_list':task_list,
             'project_list': project_list,
         }
         return render(request,'tasks/tasks.html',context)
 
 def projects(request):
-    projects = Projects.objects.all()
+    project_list = Projects.objects.order_by('name')
+    form = ProjectForm()
     if request.method == 'POST':
         form = ProjectForm(request.POST)
         if form.is_valid():
             form.save()
-            status = "Success"
-            return render(request,'tasks/projects.html', {'form':form,'status':status})
+            content = {
+                'status' : 'Success',
+                'form': form,
+                'project_list': project_list,
+            }
+
+            return render(request,'tasks/projects.html', )
         else:
             form = ProjectForm()
             status = "Error"
         return render(request,'tasks/projects.html', {'form':form,'status':status})
     elif request.method == 'GET':
-        template = loader.get_template('tasks/projects.html')
-        project_list = Projects.objects.order_by('name')
         context = {
-            'form':ProjectForm(),
+            'form':form,
             'project_list':project_list,
             'projects': projects,
         }

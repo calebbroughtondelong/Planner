@@ -3,22 +3,23 @@
 
 {% block content%}
 <link rel="stylesheet" type="text/css" href="{%  static 'css/tasks.css' %}">
+<link rel="stylesheet" type="text/css" href="{%  static 'css/nav.css' %}">
 <script src="{% static '/javascript/javascript.js' %}"></script>
 
-<div>
-  <div onclick="change_visibility('new_task')">
+<div class = nav_holder>
+    <div onclick="change_visibility('new_task')">
     Change vis
-  </div>
-     {% include 'tasks/new_project.html' %}
+    </div>
+    <div id = new_task>
+        {% include 'tasks/new_project.html' %}
 
-  <div id = task_list>
-      <p> Existing Projects </br> </p>
-    {% for project in project_list %}
-      <li>
-           {{ project.name }}
-      </li>
-    {% endfor %}
-  </div>
+        {% if project_list %}
+            {% for project in project_list %}
+                {{project.name}} id : {{project.name}}
+            {% endfor %}
+        {% endif %}
+        
+    </div>
 
 
 </div>

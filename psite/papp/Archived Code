@@ -5,3 +5,36 @@
 
 
  Loop
+
+
+
+    <table>
+      <tr>
+        <td>
+          <input type = "checkbox"> Test</radio>
+          <input type = "checkbox"> Test</input>
+        </td>
+      </tr>
+      {% for field in form %}
+      <tr>
+        {% if field.name == 'priority' %}
+        <td>
+          {{ field.name }} {{ field }} {{ field.errors }}
+        </td>
+
+        {% else %}
+              <td> {{ field.name }} </td>
+              <td> {{ field }} </td>
+              <td> {{ field.errors }}
+
+        {% endif %}
+      </tr>
+      {% endfor %}
+
+
+    </table>
+
+    <p> {{status}} </p>
+    <input type="submit" value="Create Task" />
+    <input type="hidden" name="next" value="{{ next }}" />
+

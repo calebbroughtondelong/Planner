@@ -1,34 +1,9 @@
 
-<div id = new_task>
-<p> Submit your task </p>
-
-  <form method="post" action="{% url 'tasks' %}" project_id_url = "{% url 'getbyid' %}" id = id_project>
+  <form method="post" action="{% url 'tasks' %}">
     {% csrf_token %}
-    <table>
-      {% for field in form %}
-      <tr>
-          <td> {{ field.name }} </td>
-          <td> {{ field }} </td>
-          <td> {{ field.errors }}
-      </tr>
-      {% endfor %}
+    {% load crispy_forms_tags %}
+    {% crispy form %}
 
-      {% for proj in project_list %}
-      <tr>
-        <option value = {{ proj.name }}>
-          <td> {{ proj.name }} </td>
-        </option>
-
-      </tr>
-      {% endfor %}
-
-    </table>
-
-    <p> {{status}} </p>
-    <input type="submit" value="Create Task" />
-    <input type="hidden" name="next" value="{{ next }}" />
+    {{status}}
 
   </form>
-
-
-</div>
